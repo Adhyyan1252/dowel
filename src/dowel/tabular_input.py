@@ -36,9 +36,13 @@ class TabularInput:
         self._dict[self._prefix_str + str(key)] = val
 
     def delete_key(self, key):
+        """Deletes a key.
+        In the next call to log, if this key is not present
+        then it wouldn't get logged"""
         self._dict.pop(self._prefix_str + str(key))
 
     def delete_all(self):
+        """Deletes all keys"""
         self._dict = {}
 
     def mark(self, key):
