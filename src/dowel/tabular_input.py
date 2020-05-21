@@ -35,6 +35,12 @@ class TabularInput:
         """
         self._dict[self._prefix_str + str(key)] = val
 
+    def delete_key(self, key):
+        self._dict.pop(self._prefix_str + str(key))
+
+    def delete_all(self):
+        self._dict = {}
+
     def mark(self, key):
         """Mark key as recorded."""
         self._recorded.add(key)
