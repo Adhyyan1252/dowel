@@ -62,7 +62,7 @@ class CsvOutput(FileOutput):
         The stacklevel parameter needs to be 3 to ensure the call to logger.log
         is the one printed.
         """
-        if not self._disable_warnings and msg not in self._warned_once:
+        if not self._disable_warnings and msg in self._warned_once:
             warnings.warn(
                 colorize(msg, 'yellow'), CsvOutputWarning, stacklevel=3)
         self._warned_once.add(msg)
